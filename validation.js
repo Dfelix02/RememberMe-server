@@ -17,5 +17,13 @@ const loginValidation = (data) => {
   return schema.validate(data);
 };
 
+const todoValidation = (data) => {
+  const schema = Joi.object({
+    body: Joi.string().max(255).required(),
+  });
+  return schema.validate(data);
+};
+
+module.exports.todoValidation = todoValidation;
 module.exports.registerValidation = registerValidation;
 module.exports.loginValidation = loginValidation;
